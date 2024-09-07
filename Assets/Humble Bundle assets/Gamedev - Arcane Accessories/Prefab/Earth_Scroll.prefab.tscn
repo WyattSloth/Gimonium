@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwqoa1b5wl645"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3pe220mmamvf" path="res://Assets/Arcane Accessories/Models/Earth_Scroll.Earth_Scroll.mesh" id="1_ahkp3"]
+[ext_resource type="Material" uid="uid://cror71gal6ier" path="res://Assets/Arcane Accessories/Materials/Palette-Colour.mat.tres" id="2_cvtkl"]
+
+[node name="Earth_Scroll" type="Node3D"]
+
+[node name="MeshRenderer" type="MeshInstance3D" parent="."]
+editor_description = "[MeshRenderer 23::2f5c9ae3125b9a848a43ce74e5a17ed0:3953476630127905460]"
+mesh = ExtResource("1_ahkp3")
+surface_material_override/0 = ExtResource("2_cvtkl")
+metadata/unidot_keys = {
+"m_AdditionalVertexStreams": [null, 0, null, null],
+"m_AutoUVMaxAngle": 89,
+"m_AutoUVMaxDistance": 0.5,
+"m_CastShadows": 1,
+"m_CorrespondingSourceObject": [null, 0, null, null],
+"m_DynamicOccludee": 1,
+"m_Enabled": 1,
+"m_GameObject": [null, 3304919181492398945, null, null],
+"m_IgnoreNormalsForChartDetection": 0,
+"m_ImportantGI": 0,
+"m_LightProbeUsage": 1,
+"m_LightProbeVolumeOverride": [null, 0, null, null],
+"m_LightmapParameters": [null, 0, null, null],
+"m_Materials": [[null, 2100000, "58fc11a137556894e8a3c35cdc6eceba", 2]],
+"m_MinimumChartSize": 4,
+"m_MotionVectors": 1,
+"m_ObjectHideFlags": 0,
+"m_PrefabAsset": [null, 0, null, null],
+"m_PrefabInstance": [null, 0, null, null],
+"m_PreserveUVs": 0,
+"m_ProbeAnchor": [null, 0, null, null],
+"m_RayTraceProcedural": 0,
+"m_RayTracingMode": 2,
+"m_ReceiveGI": 1,
+"m_ReceiveShadows": 1,
+"m_ReflectionProbeUsage": 1,
+"m_RendererPriority": 0,
+"m_RenderingLayerMask": 1,
+"m_ScaleInLightmap": 1,
+"m_SelectedEditorRenderState": 3,
+"m_SortingLayer": 0,
+"m_SortingLayerID": 0,
+"m_SortingOrder": 0,
+"m_StaticBatchInfo": {
+"firstSubMesh": 0,
+"subMeshCount": 0
+},
+"m_StaticBatchRoot": [null, 0, null, null],
+"m_StaticShadowCaster": 0,
+"m_StitchLightmapSeams": 1
+}

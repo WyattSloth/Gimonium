@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ds2u3u6mf45bs"
+path="res://.godot/imported/wall_gateHalf.obj-9904d63bd3f10d5c64c67224545585de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_gateHalf.obj-9904d63bd3f10d5c64c67224545585de.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/wall_gateHalf.obj"
+dest_files=["res://.godot/imported/wall_gateHalf.obj-9904d63bd3f10d5c64c67224545585de.mesh", "res://.godot/imported/wall_gateHalf.obj-9904d63bd3f10d5c64c67224545585de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

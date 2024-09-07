@@ -1,0 +1,40 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://0saa0ndgd4ym"
+path="res://.godot/imported/Dungeon_Tilemap_08.gltf-5dcc979aae8a480ddec374f3782f7021.scn"
+
+[deps]
+
+source_file="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Models/Dungeon_Tilemap_08.gltf"
+dest_files=["res://.godot/imported/Dungeon_Tilemap_08.gltf-5dcc979aae8a480ddec374f3782f7021.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Root Scene"
+nodes/apply_root_scale=false
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path="res://addons/addons/unidot_importer/post_import_unity_model.gd"
+_subresources={
+"nodes": {
+"PATH:Dungeon_Tilemap_08": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=0
+gltf/embedded_image_handling=1

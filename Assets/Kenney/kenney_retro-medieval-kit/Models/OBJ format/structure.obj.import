@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckg80854ts2p7"
+path="res://.godot/imported/structure.obj-a7746446a72bbc554a75b5450456a2ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure.obj-a7746446a72bbc554a75b5450456a2ee.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/structure.obj"
+dest_files=["res://.godot/imported/structure.obj-a7746446a72bbc554a75b5450456a2ee.mesh", "res://.godot/imported/structure.obj-a7746446a72bbc554a75b5450456a2ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

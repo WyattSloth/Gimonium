@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjaxs0hkl268q"
+path="res://.godot/imported/Andrew Hulshult - I Sawed the Demons.mp3-99ec1ea1b3cb0923c88ade6d4ac57412.mp3str"
+
+[deps]
+
+source_file="res://Music/Andrew Hulshult - I Sawed the Demons.mp3"
+dest_files=["res://.godot/imported/Andrew Hulshult - I Sawed the Demons.mp3-99ec1ea1b3cb0923c88ade6d4ac57412.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

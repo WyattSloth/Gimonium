@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cramgqm51c3cl"]
+
+[ext_resource type="ArrayMesh" uid="uid://cwp484purv3ds" path="res://Assets/Humble Bundle assets/Gamedev - Arcane Accessories/Models/Small_Potion_Bottle.Small_Potion_Bottle.mesh" id="1_pwq42"]
+
+[node name="Small_Potion_Bottle" type="Node3D"]
+
+[node name="MeshRenderer" type="MeshInstance3D" parent="."]
+editor_description = "[MeshRenderer 23::1b02e184fcfb057438d0feae076e6337:1152458118029992917]"
+mesh = ExtResource("1_pwq42")
+metadata/unidot_keys = {
+"m_AdditionalVertexStreams": [null, 0, null, null],
+"m_AutoUVMaxAngle": 89,
+"m_AutoUVMaxDistance": 0.5,
+"m_CastShadows": 1,
+"m_CorrespondingSourceObject": [null, 0, null, null],
+"m_DynamicOccludee": 1,
+"m_Enabled": 1,
+"m_GameObject": [null, 1512830131760972288, null, null],
+"m_IgnoreNormalsForChartDetection": 0,
+"m_ImportantGI": 0,
+"m_LightProbeUsage": 1,
+"m_LightProbeVolumeOverride": [null, 0, null, null],
+"m_LightmapParameters": [null, 0, null, null],
+"m_Materials": [[null, -6662152329981263948, "e16ec2a8ab9e4aa49ae3435a9e5957f4", 3], [null, -6501039909462868971, "e16ec2a8ab9e4aa49ae3435a9e5957f4", 3]],
+"m_MinimumChartSize": 4,
+"m_MotionVectors": 1,
+"m_ObjectHideFlags": 0,
+"m_PrefabAsset": [null, 0, null, null],
+"m_PrefabInstance": [null, 0, null, null],
+"m_PreserveUVs": 0,
+"m_ProbeAnchor": [null, 0, null, null],
+"m_RayTraceProcedural": 0,
+"m_RayTracingMode": 2,
+"m_ReceiveGI": 1,
+"m_ReceiveShadows": 1,
+"m_ReflectionProbeUsage": 1,
+"m_RendererPriority": 0,
+"m_RenderingLayerMask": 1,
+"m_ScaleInLightmap": 1,
+"m_SelectedEditorRenderState": 3,
+"m_SortingLayer": 0,
+"m_SortingLayerID": 0,
+"m_SortingOrder": 0,
+"m_StaticBatchInfo": {
+"firstSubMesh": 0,
+"subMeshCount": 0
+},
+"m_StaticBatchRoot": [null, 0, null, null],
+"m_StaticShadowCaster": 0,
+"m_StitchLightmapSeams": 1
+}

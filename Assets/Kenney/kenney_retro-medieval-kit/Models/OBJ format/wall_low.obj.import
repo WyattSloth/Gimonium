@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl0yn0cp68ns7"
+path="res://.godot/imported/wall_low.obj-74b0b1575baa01310b99e0d49250183e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_low.obj-74b0b1575baa01310b99e0d49250183e.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/wall_low.obj"
+dest_files=["res://.godot/imported/wall_low.obj-74b0b1575baa01310b99e0d49250183e.mesh", "res://.godot/imported/wall_low.obj-74b0b1575baa01310b99e0d49250183e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,207 @@
+[gd_scene load_steps=18 format=3 uid="uid://ccl8366ldlee4"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_g82rp"]
+[ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_3uf21"]
+[ext_resource type="Script" path="res://Player/WeaponHandler.gd" id="3_8qtgm"]
+[ext_resource type="PackedScene" uid="uid://d183t5hc36ggt" path="res://Weapons/staff.tscn" id="3_083cf"]
+[ext_resource type="Script" path="res://Player/Crosshair.gd" id="3_mwfnh"]
+[ext_resource type="PackedScene" uid="uid://ck7eiwvuqwnfh" path="res://wand.tscn" id="3_v5h5g"]
+[ext_resource type="Texture2D" uid="uid://ciosnugn0fse6" path="res://Player/damage.png" id="5_ceuj3"]
+[ext_resource type="Script" path="res://Player/AmmoHandler.gd" id="6_3fn8k"]
+[ext_resource type="PackedScene" uid="uid://dwhuj72ink57d" path="res://Player/game_over_menu.tscn" id="6_tco0y"]
+[ext_resource type="AudioStream" uid="uid://b701riy8ufx7u" path="res://Player/land.wav" id="10_gq456"]
+[ext_resource type="AudioStream" uid="uid://cjaxs0hkl268q" path="res://Player/Andrew Hulshult - I Sawed the Demons.mp3" id="11_reh0x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1ktla"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ailv4"]
+
+[sub_resource type="Animation" id="Animation_oht2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2mnls"]
+resource_name = "TakeDamage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(2.025, 2.025), Vector2(1, 1), Vector2(1.5, 1.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_che56"]
+_data = {
+"RESET": SubResource("Animation_oht2x"),
+"TakeDamage": SubResource("Animation_2mnls")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vn7q"]
+font_size = 64
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_g82rp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_1ktla")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ailv4")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
+unique_name_in_owner = true
+top_level = true
+script = ExtResource("2_3uf21")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="CameraPivot/SmoothCamera"]
+remote_path = NodePath("../../../SubViewportContainer/SubViewport/WeaponCamera")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+cull_mask = 2
+
+[node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" node_paths=PackedStringArray("weapon_1", "weapon_2", "current_weapon")]
+script = ExtResource("3_8qtgm")
+weapon_1 = NodePath("Staff")
+weapon_2 = NodePath("Wand")
+current_weapon = NodePath("Wand")
+
+[node name="Staff" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" instance=ExtResource("3_083cf")]
+weapon_mesh = null
+muzzle_flash1 = null
+muzzle_flash2 = null
+muzzle_flash3 = null
+gun_sound = null
+ammo_handler = null
+
+[node name="Wand" parent="SubViewportContainer/SubViewport/WeaponCamera/WeaponHandler" instance=ExtResource("3_v5h5g")]
+weapon_mesh = null
+muzzle_flash1 = null
+muzzle_flash2 = null
+muzzle_flash3 = null
+gun_sound = null
+ammo_type = 1
+ammo_handler = null
+
+[node name="AmmoHandler" type="Node" parent="SubViewportContainer/SubViewport/WeaponCamera"]
+unique_name_in_owner = true
+script = ExtResource("6_3fn8k")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="Control" parent="CenterContainer"]
+layout_mode = 2
+script = ExtResource("3_mwfnh")
+
+[node name="DamageTexture" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+mouse_filter = 2
+texture = ExtResource("5_ceuj3")
+
+[node name="DamageAnimationPlayer" type="AnimationPlayer" parent="DamageTexture"]
+libraries = {
+"": SubResource("AnimationLibrary_che56")
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="AmmoLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "999"
+label_settings = SubResource("LabelSettings_4vn7q")
+
+[node name="GameOverMenu" parent="." instance=ExtResource("6_tco0y")]
+visible = false
+
+[node name="DamageSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.368164)
+stream = ExtResource("10_gq456")
+volume_db = -25.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00398, -0.0130845)
+stream = ExtResource("11_reh0x")
+volume_db = -30.839
+autoplay = true

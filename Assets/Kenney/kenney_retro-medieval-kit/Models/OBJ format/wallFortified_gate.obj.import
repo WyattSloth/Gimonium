@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cx1jn0behdvyj"
+path="res://.godot/imported/wallFortified_gate.obj-386c2c52740dbae776bc5efcc0c454a3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallFortified_gate.obj-386c2c52740dbae776bc5efcc0c454a3.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/wallFortified_gate.obj"
+dest_files=["res://.godot/imported/wallFortified_gate.obj-386c2c52740dbae776bc5efcc0c454a3.mesh", "res://.godot/imported/wallFortified_gate.obj-386c2c52740dbae776bc5efcc0c454a3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

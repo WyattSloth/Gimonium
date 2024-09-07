@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bu5s6dkffgj8x"]
+
+[ext_resource type="Texture2D" uid="uid://dic1euv25rgrd" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Textures/Floor_Tiles_2x2/Tiles_2x2_basecolor.png" id="1_vaoaa"]
+[ext_resource type="Texture2D" uid="uid://d4iqtj3jekg5s" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Textures/Floor_Tiles_2x2/Tiles_2x2_ambientOcclusion.png" id="2_lv481"]
+[ext_resource type="Texture2D" uid="uid://2croacjr66c1" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Textures/Floor_Tiles_2x2/Tiles_2x2_height.png" id="3_1v1x3"]
+[ext_resource type="Texture2D" uid="uid://b7t1e2t8hae2a" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Textures/Floor_Tiles_2x2/Tiles_2x2_normal.png" id="4_4i31w"]
+[ext_resource type="Texture2D" uid="uid://dxkeajgcpkbvj" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Textures/Floor_Tiles_2x2/Tiles_2x2_roughness.png" id="5_ui6om"]
+
+[resource]
+albedo_texture = ExtResource("1_vaoaa")
+roughness_texture = ExtResource("5_ui6om")
+normal_enabled = true
+normal_texture = ExtResource("4_4i31w")
+ao_enabled = true
+ao_texture = ExtResource("2_lv481")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_1v1x3")
+uv1_triplanar = true

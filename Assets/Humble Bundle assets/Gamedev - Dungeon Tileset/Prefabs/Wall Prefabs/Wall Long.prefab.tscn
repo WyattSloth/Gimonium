@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://mk1a5n6r1cy"]
+
+[node name="Wall Long" type="Node3D"]
+
+[node name="Dungeon_Tilemap_12_1" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Dungeon_Tilemap_12_2" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0)
+
+[node name="Dungeon_Tilemap_12_3" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Dungeon_Tilemap_12_4" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Dungeon_Tilemap_12_5" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Dungeon_Tilemap_12_6" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Dungeon_Tilemap_12_7" parent="."]
+
+[node name="Dungeon_Tilemap_12_8" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[editable path="Dungeon_Tilemap_12_1"]
+[editable path="Dungeon_Tilemap_12_2"]
+[editable path="Dungeon_Tilemap_12_3"]
+[editable path="Dungeon_Tilemap_12_4"]
+[editable path="Dungeon_Tilemap_12_5"]
+[editable path="Dungeon_Tilemap_12_6"]
+[editable path="Dungeon_Tilemap_12_7"]
+[editable path="Dungeon_Tilemap_12_8"]

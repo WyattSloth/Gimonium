@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bms14tk3yhtwt"]
+
+[ext_resource type="PackedScene" uid="uid://2visk6snqptl" path="res://Pickups/pickup.tscn" id="1_mhyjb"]
+[ext_resource type="Material" uid="uid://cror71gal6ier" path="res://Assets/Arcane Accessories/Materials/Palette-Colour.mat.tres" id="2_r67sc"]
+[ext_resource type="ArrayMesh" uid="uid://bgeoh228opc3t" path="res://Assets/Dungeon_Tileset/Models/Props/Potion.Potion.mesh" id="3_taxqk"]
+[ext_resource type="Shader" uid="uid://cmeodo7o1j743" path="res://Pickups/FresnelAuraBlue.tres" id="4_6k1k4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_382uo"]
+render_priority = 0
+shader = ExtResource("4_6k1k4")
+
+[node name="SparkPickup" instance=ExtResource("1_mhyjb")]
+ammo_type = 1
+amount = 30
+
+[node name="AmmoMesh" parent="." index="0"]
+material_override = ExtResource("2_r67sc")
+mesh = ExtResource("3_taxqk")
+
+[node name="MeshInstance3D" parent="." index="2"]
+material_override = SubResource("ShaderMaterial_382uo")
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "idle"

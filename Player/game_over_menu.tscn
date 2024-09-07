@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwhuj72ink57d"]
+
+[ext_resource type="FontFile" uid="uid://ckbfdiqhgi7le" path="res://Assets/Fonts/Mood/MOOD.ttf" id="1_38ldy"]
+[ext_resource type="Script" path="res://Player/game_over_menu.gd" id="2_ukyf4"]
+[ext_resource type="Shader" uid="uid://ckrqdkgt7nn32" path="res://Player/game_over_menu.tres" id="3_hi0m7"]
+
+[sub_resource type="Theme" id="Theme_u17kf"]
+default_font = ExtResource("1_38ldy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74lrl"]
+shader = ExtResource("3_hi0m7")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xa1su"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfugr"]
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_tmsng"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_28nkn"]
+default_font_size = 24
+
+[node name="GameOverMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u17kf")
+script = ExtResource("2_ukyf4")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_74lrl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xa1su")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 0
+text = "YOU GOT YOUR ASS WIPED
+"
+label_settings = SubResource("LabelSettings_xfugr")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tmsng")
+theme_override_font_sizes/font_size = 16
+text = "TRY AGAIN"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_28nkn")
+theme_override_font_sizes/font_size = 16
+text = "GIVE UP"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

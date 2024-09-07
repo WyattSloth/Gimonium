@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jlw2il6b4qjm"
+path="res://.godot/imported/column_damaged.obj-b7e45a1f1cf329adf0ac747db91fde83.mesh"
+
+[deps]
+
+files=["res://.godot/imported/column_damaged.obj-b7e45a1f1cf329adf0ac747db91fde83.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/column_damaged.obj"
+dest_files=["res://.godot/imported/column_damaged.obj-b7e45a1f1cf329adf0ac747db91fde83.mesh", "res://.godot/imported/column_damaged.obj-b7e45a1f1cf329adf0ac747db91fde83.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

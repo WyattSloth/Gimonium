@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2h606qy0r2et"
+path="res://.godot/imported/Andrew Hulshult - Suspense.mp3-80c4a888e1b2761adcda074acc8c8eda.mp3str"
+
+[deps]
+
+source_file="res://Music/Andrew Hulshult - Suspense.mp3"
+dest_files=["res://.godot/imported/Andrew Hulshult - Suspense.mp3-80c4a888e1b2761adcda074acc8c8eda.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

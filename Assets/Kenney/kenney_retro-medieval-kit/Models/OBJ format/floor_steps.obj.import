@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c635s1sggjxo"
+path="res://.godot/imported/floor_steps.obj-21a9471f946c40dea1ea8c4b3e6dc83f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor_steps.obj-21a9471f946c40dea1ea8c4b3e6dc83f.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/floor_steps.obj"
+dest_files=["res://.godot/imported/floor_steps.obj-21a9471f946c40dea1ea8c4b3e6dc83f.mesh", "res://.godot/imported/floor_steps.obj-21a9471f946c40dea1ea8c4b3e6dc83f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

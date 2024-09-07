@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bb5ju0mtpevl7"
+path="res://.godot/imported/roof_edge.obj-6a945d0c14021134c280755dee500f19.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_edge.obj-6a945d0c14021134c280755dee500f19.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/roof_edge.obj"
+dest_files=["res://.godot/imported/roof_edge.obj-6a945d0c14021134c280755dee500f19.mesh", "res://.godot/imported/roof_edge.obj-6a945d0c14021134c280755dee500f19.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

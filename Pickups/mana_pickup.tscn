@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3n0td4h0of6g"]
+
+[ext_resource type="PackedScene" uid="uid://2visk6snqptl" path="res://Pickups/pickup.tscn" id="1_aix57"]
+
+[node name="ManaPickup" instance=ExtResource("1_aix57")]
+amount = 10
+
+[node name="AnimationPlayer" parent="." index="3"]
+autoplay = "idle"

@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://d183t5hc36ggt"]
+
+[ext_resource type="PackedScene" uid="uid://d35331xrqqtgx" path="res://Weapons/hitscan_weapon.tscn" id="1_xl6jr"]
+[ext_resource type="PackedScene" uid="uid://dp7yt78pl4bhg" path="res://Assets/Humble Bundle assets/Gamedev - Arcane Accessories/Prefab/Wooden_Staff.prefab.tscn" id="2_e5dnw"]
+[ext_resource type="AudioStream" uid="uid://cnjqjiawwie4x" path="res://Sounds/rocket.wav" id="3_lnner"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6sbjh"]
+albedo_color = Color(1, 0.407843, 0.313726, 1)
+emission_enabled = true
+emission = Color(1, 0.2, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="Curve" id="Curve_83qtu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1q6o0"]
+curve = SubResource("Curve_83qtu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qai5j"]
+inherit_velocity_ratio = 0.145
+velocity_pivot = Vector3(0, 0, 1)
+direction = Vector3(1, 0, -10)
+spread = 15.0
+initial_velocity_min = 15.0
+initial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_1q6o0")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ykjh6"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wdw7v"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmf4v"]
+albedo_color = Color(1, 0.741176, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 3.0
+
+[node name="Staff" node_paths=PackedStringArray("weapon_mesh", "muzzle_flash1", "muzzle_flash2", "muzzle_flash3", "gun_sound") instance=ExtResource("1_xl6jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0858753, 0)
+fire_rate = 8.0
+recoil = 0.3
+weapon_mesh = NodePath("Wooden_Staff")
+weapon_damage = 70
+muzzle_flash1 = NodePath("MuzzleFlash/GPUParticles3D")
+muzzle_flash2 = NodePath("MuzzleFlash/GPUParticles3D2")
+muzzle_flash3 = NodePath("MuzzleFlash/GPUParticles3D3")
+gun_sound = NodePath("GunSound")
+
+[node name="MuzzleFlash" type="Node3D" parent="." index="2"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MuzzleFlash" index="0"]
+transform = Transform3D(0.977409, 0, 0.211359, 0, 1, 0, -0.211359, 0, 0.977409, 0.215797, -0.0859735, -0.945997)
+layers = 3
+material_override = SubResource("StandardMaterial3D_6sbjh")
+cast_shadow = 0
+emitting = false
+amount = 120
+amount_ratio = 0.0714
+lifetime = 0.08
+one_shot = true
+explosiveness = 0.74
+fixed_fps = 60
+visibility_aabb = AABB(-0.057991, -0.0750068, -0.117614, 0.326919, 0.299428, 0.288939)
+process_material = SubResource("ParticleProcessMaterial_qai5j")
+draw_pass_1 = SubResource("BoxMesh_ykjh6")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="MuzzleFlash" index="1"]
+transform = Transform3D(0.977409, 0, 0.211359, 0, 1, 0, -0.211359, 0, 0.977409, 0.215797, -0.0859735, -0.945997)
+layers = 3
+material_override = SubResource("StandardMaterial3D_wdw7v")
+cast_shadow = 0
+emitting = false
+amount = 120
+amount_ratio = 0.0714
+lifetime = 0.08
+one_shot = true
+explosiveness = 0.74
+fixed_fps = 60
+visibility_aabb = AABB(-0.057991, -0.0750068, -0.117614, 0.326919, 0.299428, 0.288939)
+process_material = SubResource("ParticleProcessMaterial_qai5j")
+draw_pass_1 = SubResource("BoxMesh_ykjh6")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="MuzzleFlash" index="2"]
+transform = Transform3D(0.977409, 0, 0.211359, 0, 1, 0, -0.211359, 0, 0.977409, 0.215797, -0.0859735, -0.945997)
+layers = 3
+material_override = SubResource("StandardMaterial3D_fmf4v")
+cast_shadow = 0
+emitting = false
+amount = 120
+amount_ratio = 0.0714
+lifetime = 0.08
+one_shot = true
+explosiveness = 0.74
+fixed_fps = 60
+visibility_aabb = AABB(-0.057991, -0.0750068, -0.117614, 0.326919, 0.299428, 0.288939)
+process_material = SubResource("ParticleProcessMaterial_qai5j")
+draw_pass_1 = SubResource("BoxMesh_ykjh6")
+
+[node name="GunSound" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253939, 0, -0.86038)
+stream = ExtResource("3_lnner")
+volume_db = -35.0
+
+[node name="Wooden_Staff" parent="." index="4" instance=ExtResource("2_e5dnw")]
+transform = Transform3D(0.606311, -0.488982, -0.627123, 0.765213, 0.144132, 0.627436, -0.216417, -0.860304, 0.461564, 0.395785, -0.094599, -0.337448)

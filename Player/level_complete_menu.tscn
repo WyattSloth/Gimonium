@@ -1,0 +1,127 @@
+[gd_scene load_steps=11 format=3 uid="uid://dx3uyeygrqp21"]
+
+[ext_resource type="FontFile" uid="uid://ckbfdiqhgi7le" path="res://Assets/Fonts/Mood/MOOD.ttf" id="1_cnax7"]
+[ext_resource type="Script" path="res://Player/level_complete_menu.gd" id="2_d50y4"]
+[ext_resource type="Shader" uid="uid://ckrqdkgt7nn32" path="res://Player/game_over_menu.tres" id="3_0g7pl"]
+[ext_resource type="Texture2D" uid="uid://clynbv4bs75l3" path="res://Assets/Bramwells assets/star.png" id="4_n7cli"]
+
+[sub_resource type="Theme" id="Theme_u17kf"]
+default_font = ExtResource("1_cnax7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74lrl"]
+shader = ExtResource("3_0g7pl")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xa1su"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfugr"]
+font_size = 48
+
+[sub_resource type="Theme" id="Theme_tmsng"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_28nkn"]
+default_font_size = 24
+
+[node name="LevelCompleteMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u17kf")
+script = ExtResource("2_d50y4")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_74lrl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xa1su")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "LEVEL COMPLETE"
+label_settings = SubResource("LabelSettings_xfugr")
+horizontal_alignment = 1
+
+[node name="StarContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="Star1" type="TextureRect" parent="CenterContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_n7cli")
+expand_mode = 2
+
+[node name="Star2" type="TextureRect" parent="CenterContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_n7cli")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star3" type="TextureRect" parent="CenterContainer/VBoxContainer/StarContainer"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_n7cli")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="FinishedLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "x : Reached the end"
+horizontal_alignment = 1
+
+[node name="FullHealthLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "x : Full life"
+horizontal_alignment = 1
+
+[node name="ClearLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "x : Killed everything"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tmsng")
+text = "Do it again"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_28nkn")
+text = "Play something else"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

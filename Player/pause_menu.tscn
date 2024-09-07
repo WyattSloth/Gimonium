@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://dng50rut2km3c"]
+
+[ext_resource type="FontFile" uid="uid://ckbfdiqhgi7le" path="res://Assets/Fonts/Mood/MOOD.ttf" id="1_75ua3"]
+[ext_resource type="Script" path="res://Player/pause_menu.gd" id="2_v4sco"]
+[ext_resource type="Shader" uid="uid://ckrqdkgt7nn32" path="res://Player/game_over_menu.tres" id="3_wqq1s"]
+
+[sub_resource type="Theme" id="Theme_u17kf"]
+default_font = ExtResource("1_75ua3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74lrl"]
+shader = ExtResource("3_wqq1s")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xa1su"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xfugr"]
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_tmsng"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_28nkn"]
+default_font_size = 24
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u17kf")
+script = ExtResource("2_v4sco")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_74lrl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xa1su")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 0
+text = "GAME PAUSED"
+label_settings = SubResource("LabelSettings_xfugr")
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tmsng")
+theme_override_font_sizes/font_size = 16
+text = "CONTINUE
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Level1Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_tmsng")
+theme_override_font_sizes/font_size = 16
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tmsng")
+theme_override_font_sizes/font_size = 16
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tmsng")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Level 3
+"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_28nkn")
+theme_override_font_sizes/font_size = 16
+text = "GIVE UP"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

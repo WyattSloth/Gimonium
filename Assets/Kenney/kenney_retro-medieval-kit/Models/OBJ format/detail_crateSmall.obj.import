@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvqctyukicoig"
+path="res://.godot/imported/detail_crateSmall.obj-8273aee76377dd1fffe6cb2f667942f6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail_crateSmall.obj-8273aee76377dd1fffe6cb2f667942f6.mesh"]
+
+source_file="res://Assets/Kenney/kenney_retro-medieval-kit/Models/OBJ format/detail_crateSmall.obj"
+dest_files=["res://.godot/imported/detail_crateSmall.obj-8273aee76377dd1fffe6cb2f667942f6.mesh", "res://.godot/imported/detail_crateSmall.obj-8273aee76377dd1fffe6cb2f667942f6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

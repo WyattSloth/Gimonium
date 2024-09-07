@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dl2e3nns3g0cx"]
+
+[ext_resource type="Material" uid="uid://djlo6ysh0dsde" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Materials/Colour-palette.mat.tres" id="1_p426a"]
+[ext_resource type="Script" path="res://Levels/end_loot.gd" id="1_t31nn"]
+[ext_resource type="ArrayMesh" uid="uid://okd1m647131d" path="res://Assets/Humble Bundle assets/Gamedev - Dungeon Tileset/Models/Props/Chest_Big_gold.Chest_Big_gold.mesh" id="2_6f1vq"]
+[ext_resource type="PackedScene" uid="uid://dx3uyeygrqp21" path="res://Player/level_complete_menu.tscn" id="4_itv0c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4tyq6"]
+points = PackedVector3Array(0.0113424, 0.626186, -0.00244275, 0.010169, 0.605285, 0.076061, 0.66597, 0.423546, 0.294936, 0.187353, 0.591064, -0.00244275, 0.18657, 0.572185, -0.0809465, 0.010169, 0.605285, -0.0809465, -0.17575, 0.572185, -0.0809465, -0.174968, 0.591064, -0.00244275, -0.17575, 0.572185, 0.076061, 0.167274, 0.423546, 0.311208, -0.665971, 0.423546, 0.294936, -0.167406, 0.423546, 0.311208, 0.511081, 0.34325, 0.290504, 0.455149, -8.561e-08, 0.23404, 0.66597, 0.423546, -0.294965, 0.163885, 0.341779, 0.305136, 0.00717032, 0.55251, -0.15945, -0.665971, 0.423546, -0.294965, -4.76837e-07, 0.394247, 0.309994, 0.0388522, 0.385605, 0.309447, -0.45528, -8.561e-08, 0.23404, -0.511213, 0.34325, 0.290504, -0.164016, 0.341779, 0.305136, -0.0389835, 0.385605, 0.309447, 0.157496, 0.264057, 0.293297, 0.455149, -8.561e-08, -0.234129, 0.0752276, 0.190871, 0.280426, 0.58657, 0.383888, -0.293325, 0.359973, 0.384072, -0.307472, 0.36584, 0.423607, -0.30905, 0.0631025, 0.354589, 0.306897, 0.0590608, 0.342085, 0.30544, 0.0516292, 0.319039, 0.302344, -0.365971, 0.423607, -0.30905, -0.360104, 0.384072, -0.307472, -0.586701, 0.383888, -0.293325, -0.45528, -8.561e-08, -0.234129, -0.0753589, 0.190871, 0.280426, -0.157627, 0.264057, 0.293297, -0.0517606, 0.319039, 0.302344, -0.0591921, 0.342085, 0.30544, -0.0632338, 0.354589, 0.306897, 0.033637, 0.299915, 0.299308, 0.201303, 0.423546, -0.30905, -0.201434, 0.423546, -0.30905, -0.0337684, 0.299915, 0.299308)
+
+[node name="EndLoot" type="Area3D"]
+script = ExtResource("1_t31nn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_4tyq6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_p426a")
+mesh = ExtResource("2_6f1vq")
+skeleton = NodePath("")
+
+[node name="LevelCompleteMenu" parent="." instance=ExtResource("4_itv0c")]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
