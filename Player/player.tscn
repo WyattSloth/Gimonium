@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://ccl8366ldlee4"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_g82rp"]
+[ext_resource type="Script" path="res://BetterMovement.gd" id="1_src7h"]
 [ext_resource type="Script" path="res://Player/SmoothCamera.gd" id="2_3uf21"]
 [ext_resource type="Script" path="res://Player/WeaponHandler.gd" id="3_8qtgm"]
 [ext_resource type="PackedScene" uid="uid://d183t5hc36ggt" path="res://Weapons/staff.tscn" id="3_083cf"]
@@ -14,8 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://dng50rut2km3c" path="res://Player/pause_menu.tscn" id="11_ykdul"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1ktla"]
+radius = 0.4
+height = 1.6
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ailv4"]
+radius = 0.4
+height = 1.6
 
 [sub_resource type="Animation" id="Animation_oht2x"]
 length = 0.001
@@ -84,19 +88,22 @@ font_size = 48
 font_color = Color(1, 0.4, 0.243137, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-script = ExtResource("1_g82rp")
+script = ExtResource("1_src7h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CapsuleMesh_1ktla")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_ailv4")
 
 [node name="CameraPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 top_level = true
 script = ExtResource("2_3uf21")
 
@@ -119,6 +126,7 @@ render_target_update_mode = 4
 
 [node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 cull_mask = 2
 
 [node name="WeaponHandler" type="Node3D" parent="SubViewportContainer/SubViewport/WeaponCamera" node_paths=PackedStringArray("weapon_1", "weapon_2")]

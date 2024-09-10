@@ -1,11 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0ik6xd0vtpir"]
+[gd_scene load_steps=10 format=3 uid="uid://c0ik6xd0vtpir"]
 
 [ext_resource type="PackedScene" uid="uid://ccl8366ldlee4" path="res://Player/player.tscn" id="1_plpml"]
-[ext_resource type="PackedScene" uid="uid://cdj2gf4fsbsj0" path="res://Enemy/enemy.tscn" id="2_atua8"]
 [ext_resource type="Material" uid="uid://bgtyj1nuhvv4h" path="res://Levels/GridMaterial.tres" id="2_xt1te"]
-[ext_resource type="PackedScene" uid="uid://buq5n23vquw84" path="res://Assets/Dungeon Expedition Essentials/Models/Cheese_Wedge.gltf" id="4_vhi63"]
 [ext_resource type="PackedScene" uid="uid://d3n0td4h0of6g" path="res://Pickups/mana_pickup.tscn" id="5_5cr5c"]
-[ext_resource type="Material" uid="uid://dlb7w2eytujpf" path="res://Assets/Dungeon Expedition Essentials/Materials/Palette-Colour.mat.tres" id="5_lrvor"]
 [ext_resource type="PackedScene" uid="uid://bms14tk3yhtwt" path="res://Pickups/spark_pickup.tscn" id="6_cicki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_inris"]
@@ -182,28 +179,10 @@ use_collision = true
 size = Vector3(64, 1, 64)
 material = ExtResource("2_xt1te")
 
-[node name="Enemy1" parent="." instance=ExtResource("2_atua8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1676, 1, -12.9728)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_atua8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1676, 1, -12.9728)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_atua8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8324, 1, -20.9728)
-
-[node name="Root Scene" parent="." instance=ExtResource("4_vhi63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
-
-[node name="Cheese_Wedge" parent="Root Scene" index="0"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -1.19209e-07, -0.283805)
-material_override = ExtResource("5_lrvor")
-
 [node name="Pickups" type="Node3D" parent="."]
 
 [node name="ManaPickup" parent="Pickups" instance=ExtResource("5_5cr5c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 3)
 
 [node name="SparkPickup" parent="Pickups" instance=ExtResource("6_cicki")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 0)
-
-[editable path="Root Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.5, 0)

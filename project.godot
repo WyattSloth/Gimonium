@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Destiny 3"
-run/main_scene="res://Levels/E1M1.tscn"
+run/main_scene="res://Levels/Sandbox.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -3,12 +3,13 @@ extends CharacterBody3D
 @export var speed := 8.0
 @export var max_hitpoints := 100
 @export var jump_height: float = 1.0
-@export var fall_multiplier: float = 2.5
+@export var fall_multiplier: float = 1.25
 @export var aim_multiplier := 0.7
+@export var sensitivity := 0.05
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var mouse_motion := Vector2.ZERO
+
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation_player: AnimationPlayer = $DamageTexture/DamageAnimationPlayer
 @onready var game_over_menu: Control = $GameOverMenu
@@ -77,11 +78,10 @@ func _input(event: InputEvent) -> void:
 			mouse_motion = -event.relative * 0.001
 			if Input.is_action_pressed("Aim"):
 				mouse_motion *= aim_multiplier
-	if event.is_action_pressed("ui_cancel"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		#get_tree().paused = true
+
 	if event.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
+
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().paused = true
 		pause_menu.visible = true
